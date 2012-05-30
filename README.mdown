@@ -1,0 +1,3 @@
+# fb-canvas-app-skel
+
+A skeleton Facebook canvas app for PHP 5.3 written with simple, promotional apps in mind.

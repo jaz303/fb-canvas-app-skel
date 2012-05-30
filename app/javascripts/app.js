@@ -1,0 +1,7 @@
+window.onFacebookReady = function() {
+  
+};
+
+$(function() {
+  
+});
