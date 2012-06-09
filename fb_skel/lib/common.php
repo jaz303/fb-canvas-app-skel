@@ -88,6 +88,7 @@ function url_for_stylesheet($stylesheet) { return FB_APP_URL_PREFIX . '/styleshe
 function url_for_javascript($javascript) { return FB_APP_URL_PREFIX . '/javascripts/' . $javascript; }
 
 function url_for_terms_and_conditions() { return url_for_app('/terms-and-conditions.php'); }
+function url_for_privacy_policy() { return url_for_app('/privacy-policy.php'); }
 
 //
 // Templating
