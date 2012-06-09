@@ -9,7 +9,7 @@ date_default_timezone_set("Europe/London");
 define('FB_APP_ID',               '');
 define('FB_SECRET',               '');
 define('FB_APP_NAMESPACE',        '');
-define('FB_APP_URL_PREFIX',       '/app/');
+define('FB_APP_URL_PREFIX',       '/app');
 
 define('APP_TITLE',               '');
 
