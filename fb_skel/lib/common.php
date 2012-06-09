@@ -30,7 +30,7 @@ function db() {
     $pdo = new PDO(PDO_DSN, PDO_USERNAME, PDO_PASSWORD);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $pdo->exec("SET time_zone = '+01:00'");
+    $pdo->exec("SET time_zone = '" . date('P') . "'");
     $GLOBALS['__db'] = $pdo;
   }
   return $GLOBALS['__db'];
