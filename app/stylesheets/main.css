@@ -1,3 +1,8 @@
 @import url('reset.css');
 
-#container { width: 760px; margin: 0 auto; }
+body {
+    font: 12px/1.4 Helvetica, Arial sans-serif;
+    color: black;
+}
+
+#container { width: 760px; margin: 0 auto; position: relative; }

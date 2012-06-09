@@ -27,7 +27,11 @@ function fb_user_id() {
 
 function db() {
   if ($GLOBALS['__db'] === null) {
-    $GLOBALS['__db'] = new PDO(PDO_DSN, PDO_USERNAME, PDO_PASSWORD);
+    $pdo = new PDO(PDO_DSN, PDO_USERNAME, PDO_PASSWORD);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $pdo->exec("SET time_zone = '+01:00'");
+    $GLOBALS['__db'] = $pdo;
   }
   return $GLOBALS['__db'];
 }
@@ -36,7 +40,7 @@ function db() {
 // HTTP
 
 function is_post() {
-  return $_SERVER['REQUEST_METHOD'] = 'POST';
+  return $_SERVER['REQUEST_METHOD'] == 'POST';
 }
 
 //
@@ -83,6 +87,8 @@ function url_for_image($image) { return FB_APP_URL_PREFIX . '/images/' . $image;
 function url_for_stylesheet($stylesheet) { return FB_APP_URL_PREFIX . '/stylesheets/' . $stylesheet; }
 function url_for_javascript($javascript) { return FB_APP_URL_PREFIX . '/javascripts/' . $javascript; }
 
+function url_for_terms_and_conditions() { return url_for_app('/terms-and-conditions.php'); }
+
 //
 // Templating
 
@@ -112,5 +118,12 @@ function display($__template__ = null) {
   global $_TPL;
   extract($_TPL);
   require template_path($__template__);
+}
+
+//
+// HTML
+
+function share_link($text) {
+  return "<a href='#' onclick='share(); return false;'>" . h($text) . "</a>";
 }
 ?>

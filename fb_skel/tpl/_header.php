@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <title><?= APP_TITLE ?></title>
+    <title>Magners Fridays</title>
     <link rel="stylesheet" href="<?= url_for_stylesheet('main.css') ?>">
     <script type="text/javascript" src="<?= url_for_javascript('jquery.min.js') ?>"></script>
     <script type="text/javascript" src="<?= url_for_javascript('app.js') ?>"></script>
@@ -32,6 +32,4 @@
          ref.parentNode.insertBefore(js, ref);
        }(document));
     </script>
-    
-    <div id="container">
-
+    <div id='container'>
