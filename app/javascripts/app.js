@@ -13,6 +13,20 @@ function share() {
    });
  }
 
+function request() {
+  FB.getLoginStatus(function(response) {
+    if (response.status === 'connected') {
+      var res = FB.ui({
+        method: 'apprequests',
+        title: 'Request tile here...',
+        message: 'Request text here...'
+      }, function(response) {
+        
+      });
+    }
+  })
+}
+
 window.onFacebookReady = function() {
   
 };
